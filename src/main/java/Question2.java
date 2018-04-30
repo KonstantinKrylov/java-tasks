@@ -62,7 +62,7 @@ import java.util.stream.Stream;
 
 public class Question2 {
 
-    //It's better to store this pieces as constants. It would be easy to change then if needed.
+    //It's better to store this pieces as constants. It would be easy to change them if needed.
     private static final String BEGINNING = "<select name=\"state\">\n";
     private static final String LEFT_PART = "<option value=\"";
     private static final String CLOSED_TAG = "\">";
@@ -71,7 +71,7 @@ public class Question2 {
 
     public String createStateSelectList() {
 
-        //Main part of the result built in just for 3 lines, regardless the amount of states
+        //Main part of the result built in just in 3 lines, regardless the amount of states.
 
         StringBuilder result = new StringBuilder(BEGINNING);
 
@@ -88,13 +88,13 @@ public class Question2 {
         return result.toString();
     }
 
-    public String parseSelectedState(String s) {
-        //Only one line to obtain state code
-        return States.byName(s).getStateCode();
+    public String parseSelectedState(String stateName) {
+        //Only one line to obtain state code.
+        return States.byName(stateName).getStateCode();
     }
 
     public String displayStateFullName(String abbr) {
-        //Only one line to obtain state name
+        //Only one line to obtain state name.
         return States.byCode(abbr).getStateName();
     }
 }

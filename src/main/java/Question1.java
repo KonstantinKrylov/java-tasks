@@ -33,7 +33,7 @@ import java.util.stream.Collectors;
 public class Question1 {
 
     public boolean allStringSetsIdentical(String[][] input) {
-
+        if (input == null) return false;
         List<SortedSet<String>> list = Arrays.stream(input)
                                              .map(array -> new TreeSet<>(Arrays.asList(array)))
                                              .collect(Collectors.toList());

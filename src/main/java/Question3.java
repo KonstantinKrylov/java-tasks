@@ -28,15 +28,13 @@
  satisfying the other requirements) before starting a new line.
  */
 
-import java.util.Arrays;
-
 public class Question3 {
 
     public String wrapText(String text, int maxCharsPerLine) {
 
-        if (maxCharsPerLine < 1) return "";
+        if (maxCharsPerLine < 1 || text == null) return "";
 
-            String[] array = text.split("\n");
+        String[] array = text.split("\n");
         StringBuilder result = new StringBuilder();
 
         for (int i = 0; i < array.length; i++) {
@@ -60,7 +58,7 @@ public class Question3 {
                     result.append(word);
                     lineFreeSpace -= word.length() + 1;
                     String nextWord = nextWord(array, i);
-                    if (isSpaceNeeded(lineFreeSpace, nextWord)) result.append("#");
+                    if (isSpaceNeeded(lineFreeSpace, nextWord)) result.append(" ");
                     word = "";
                 } else {
                     if (canBeBroken(word, maxCharsPerLine)) {
@@ -72,7 +70,7 @@ public class Question3 {
                         result.append("\n" + word);
                         lineFreeSpace -= word.length() + 1;
                         String nextWord = nextWord(array, i);
-                        if (isSpaceNeeded(lineFreeSpace, nextWord)) result.append("#");
+                        if (isSpaceNeeded(lineFreeSpace, nextWord)) result.append(" ");
                         if (lineFreeSpace < 0) lineFreeSpace = 0;
                         word = "";
                     }
