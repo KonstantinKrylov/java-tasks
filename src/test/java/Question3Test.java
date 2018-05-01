@@ -26,12 +26,13 @@ public class Question3Test {
                 {"abcd   ef     j hig", 3, "abc\nd\nef\nj\nhig"},
                 {"abcdef", 50, "abcdef"},
                 {"abcdef", 0, ""},
+                {"q q q q q q q q q q", 5, "q q q\nq q q\nq q q\nq"},
                 {"abc\ndef\nhig", 2, "ab\nc\nde\nf\nhi\ng"},
                 {"a a a a a", 4, "a a\na a\na"},
                 {"\n\n\nZZZ\n\n", 1, "\n\n\nZ\nZ\nZ"},
-                {"\n\n\n\n",10, ""},
-                {null,1,""},
-                {"",1,""}
+                {"\n\n\n\n", 10, ""},
+                {null, 1, ""},
+                {"", 1, ""}
         });
     }
 
